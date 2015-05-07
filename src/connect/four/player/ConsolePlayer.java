@@ -29,6 +29,8 @@ public class ConsolePlayer implements Player, ScoreChart.Listener {
         dumpBoard(board);
         System.out.println(m_name + ": " + scores.getScore(this));
         
+        //Added to make the console play less confusing after a game has ended.  
+        //added an option to quit game or play again.
         System.out.println();
         System.out.println("Would you like to play again?");
         System.out.println("(Enter 0 for quit and 1 for play again)");
@@ -48,6 +50,7 @@ public class ConsolePlayer implements Player, ScoreChart.Listener {
             System.exit(0);
         else
         	System.out.println("Playing again!");
+    //end aded code ======================================================    	
     }
 
     @Override public void performPlay(ReadWritableBoard board) {
