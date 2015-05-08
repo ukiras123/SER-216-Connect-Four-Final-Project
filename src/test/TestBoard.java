@@ -13,7 +13,7 @@ public class TestBoard {
 	public void testBoardCopyConstructor() {
 		
 		//Instantiate the console players:
-		ConsolePlayer AT = new ConsolePlayer("@");
+		ConsolePlayer aT = new ConsolePlayer("@");
 		ConsolePlayer X = new ConsolePlayer("X");
 		
 		//Setup the two board configurations:
