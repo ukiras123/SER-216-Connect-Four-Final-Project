@@ -21,9 +21,9 @@ public class TestBoard {
 										  { null, null, null, null, null, null, null  },
 										  { null, null, null, null, null, null, null  }, 
 								   		  { X, null, null, null, null, null, null  },
-										  { AT, X, null, null, null, null, null  },
-										  { AT, X, null, null, null, null, null  },
-										  { AT, X, AT, AT, X, AT, null }};
+										  { aT, X, null, null, null, null, null  },
+										  { aT, X, null, null, null, null, null  },
+										  { aT, X, aT, aT, X, aT, null }};
 				
 		ConsolePlayer[][] board2Config = {{ null, null, null, null, null, null, null  }, 
 										  { null, null, null, null, null, null, null  }, 
