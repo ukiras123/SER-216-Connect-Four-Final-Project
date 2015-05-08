@@ -13,25 +13,25 @@ public class TestBoard {
 	public void testBoardCopyConstructor() {
 		
 		//Instantiate the console players:
-		ConsolePlayer adam = new ConsolePlayer("@dam");
-		ConsolePlayer xian = new ConsolePlayer("Xian");
+		ConsolePlayer AT = new ConsolePlayer("@");
+		ConsolePlayer X = new ConsolePlayer("X");
 		
 		//Setup the two board configurations:
-		ConsolePlayer[][] board1Config = {{ xian, null, null, null, null, null }, //1
-										  { adam, xian, null, null, null, null }, //2
-										  { null, null, null, null, null, null }, //3
-							/*Bottom*/    { null, null, null, null, null, null }, //4  /*Top*/
-										  { adam, xian, null, null, null, null }, //5
-										  { null, null, null, null, null, null }, //6
-										  { adam, xian, adam, adam, xian, adam }};//7
+		ConsolePlayer[][] board1Config = {{ null, null, null, null, null, null, null  },
+										  { null, null, null, null, null, null, null  },
+										  { null, null, null, null, null, null, null  }, 
+								   		  { X, null, null, null, null, null, null  },
+										  { AT, X, null, null, null, null, null  },
+										  { AT, X, null, null, null, null, null  },
+										  { AT, X, AT, AT, X, AT, null }};
 				
-		ConsolePlayer[][] board2Config = {{ null, null, null, null, null, null }, //1
-										  { null, null, null, null, null, null }, //2
-										  { null, null, null, null, null, null }, //3
-							/*Bottom*/    { null, null, null, null, null, null }, //4  /*Top*/
-										  { null, null, null, null, null, null }, //5
-										  { null, null, null, null, null, null }, //6
-										  { null, null, null, null, null, null }};//7
+		ConsolePlayer[][] board2Config = {{ null, null, null, null, null, null, null  }, 
+										  { null, null, null, null, null, null, null  }, 
+										  { null, null, null, null, null, null, null  }, 
+								  		  { null, null, null, null, null, null, null  }, 
+										  { null, null, null, null, null, null, null  }, 
+										  { null, null, null, null, null, null, null  }, 
+										  { null, null, null, null, null, null, null  }};
 		
 		//Create the two boards to be copied with the two board configurations:
 		Board board1 = new Board(board1Config);
@@ -61,23 +61,6 @@ public class TestBoard {
 			for(int j = 0; j < board2.getHeight(); j++)
 				assertEquals(board2.whoPlayed(i, j), board2copy.whoPlayed(i, j));
 		
-		
-		
-	}
-
-	@Test
-	public void testPlay() {
-		//TODO
-	}
-
-	@Test
-	public void testGetColumnHeight() {
-		//TODO
-	}
-
-	@Test
-	public void testClear() {
-		//TODO
 	}
 
 }
