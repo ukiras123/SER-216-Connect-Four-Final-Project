@@ -17,8 +17,6 @@ import connect.four.board.*;
 
 public class TestConsolePlayer {
 	
-//--START code modified from user dfa on stackoverflow.com----------------------------//
-//--(http://stackoverflow.com/questions/1119385/junit-test-for-system-out-println)----//
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before
@@ -30,68 +28,68 @@ public class TestConsolePlayer {
 	public void cleanUpStreams() {
 	    System.setOut(null);
 	}
-//--END code modified from user dfa on stackoverflow.com------------------------------//
+
 	
 	@Test
 	public void testDumpBoard() {
 		
 		//Instantiate the console players, and create a method variable for dumpBoard():
-		ConsolePlayer adam = new ConsolePlayer("adam the @ player");
-		ConsolePlayer xian = new ConsolePlayer("xian the X player");
+		ConsolePlayer greg = new ConsolePlayer("greg the @ player");
+		ConsolePlayer scott = new ConsolePlayer("scott the X player");
 		Method dumpBoard = null;
 		
 		//Setup the strings representing the expected output:
-		String expectedOutput1 = "@ is you, X is the other player, and O is empty." + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
+		String expectedOutput1 = "@ is you, X is the other player, and - is empty." + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
 								 "1234567" + System.lineSeparator();
 		
-		String expectedOutput2 = "@ is you, X is the other player, and O is empty." + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "OOOOOOO" + System.lineSeparator() +
-								 "O@OOOOO" + System.lineSeparator() +
-								 "OXOOO@O" + System.lineSeparator() +
-								 "@X@OOXO" + System.lineSeparator() +
+		String expectedOutput2 = "@ is you, X is the other player, and - is empty." + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-------" + System.lineSeparator() +
+								 "-@-----" + System.lineSeparator() +
+								 "-X---@-" + System.lineSeparator() +
+								 "@X@--X-" + System.lineSeparator() +
 								 "1234567" + System.lineSeparator();
 		
-		String expectedOutput3 = "@ is you, X is the other player, and O is empty." + System.lineSeparator() +
-								 "OOOXOOO" + System.lineSeparator() +
-								 "OOO@OOO" + System.lineSeparator() +
-								 "OOOXOOO" + System.lineSeparator() +
-								 "OOO@OOO" + System.lineSeparator() +
-								 "OOOXOOO" + System.lineSeparator() +
-								 "OOO@OOO" + System.lineSeparator() +
+		String expectedOutput3 = "@ is you, X is the other player, and - is empty." + System.lineSeparator() +
+								 "---X---" + System.lineSeparator() +
+								 "---@---" + System.lineSeparator() +
+								 "---X---" + System.lineSeparator() +
+								 "---@---" + System.lineSeparator() +
+								 "---X---" + System.lineSeparator() +
+								 "---@---" + System.lineSeparator() +
 								 "1234567" + System.lineSeparator();
 		
 		//Setup the three board configurations:
-		ConsolePlayer[][] board1Config = {{ null, null, null, null, null, null }, //1
-										  { null, null, null, null, null, null }, //2
-										  { null, null, null, null, null, null }, //3
-							/*Bottom*/    { null, null, null, null, null, null }, //4  /*Top*/
-										  { null, null, null, null, null, null }, //5
-										  { null, null, null, null, null, null }, //6
-										  { null, null, null, null, null, null }};//7
+		ConsolePlayer[][] board1Config = {{ null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+									          { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }};
 		
-		ConsolePlayer[][] board2Config = {{ adam, null, null, null, null, null }, //1
-										  { xian, xian, adam, null, null, null }, //2
-										  { adam, null, null, null, null, null }, //3
-							/*Bottom*/    { null, null, null, null, null, null }, //4  /*Top*/
-										  { null, null, null, null, null, null }, //5
-										  { xian, adam, null, null, null, null }, //6
-										  { null, null, null, null, null, null }};//7
+		ConsolePlayer[][] board2Config = {{ greg, null, null, null, null, null }, 
+										  { scott, scott, greg, null, null, null }, 
+										  { greg, null, null, null, null, null }, 
+										  { null, null, null, null, null, null },
+										  { null, null, null, null, null, null }, 
+										  { scott, greg, null, null, null, null }, 
+										  { null, null, null, null, null, null }};
 		
-		ConsolePlayer[][] board3Config = {{ null, null, null, null, null, null }, //1
-										  { null, null, null, null, null, null }, //2
-										  { null, null, null, null, null, null }, //3
-							/*Bottom*/    { adam, xian, adam, xian, adam, xian }, //4  /*Top*/
-										  { null, null, null, null, null, null }, //5
-										  { null, null, null, null, null, null }, //6
-										  { null, null, null, null, null, null }};//7
+		ConsolePlayer[][] board3Config = {{ null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+										  { greg, scott, greg, scott, greg, scott },
+										  { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }, 
+										  { null, null, null, null, null, null }};
 		
 		//Create the boards with the three board configurations
 		Board board1 = new Board(board1Config);
@@ -106,31 +104,31 @@ public class TestConsolePlayer {
 			fail("No such method exception thrown.");
 		}
 		catch(Exception e){
-			fail("Something went wrong; I don't know what.");
+			fail("ERROR");
 		}
 		
-		//dumpBoard is private, so we must make it accessible:
+		//dumpBoard is private, make it so we can access it
 		dumpBoard.setAccessible(true);
 		
 		//Perform the tests:
 		try{
-			//Test 1 ~~~ ID# UI-CdB-1
-			dumpBoard.invoke(adam, new Object[] { board1 });
+			//Test 1 
+			dumpBoard.invoke(greg, new Object[] { board1 });
 			assertEquals(expectedOutput1, outContent.toString());
 			outContent.reset();
 			
-			//Test 2 ~~~ ID# UI-CdB-2
-			dumpBoard.invoke(adam, new Object[] { board2 });
+			//Test 2 
+			dumpBoard.invoke(greg, new Object[] { board2 });
 			assertEquals(expectedOutput2, outContent.toString());
 			outContent.reset();
 			
-			//Test 3 ~~~ ID# UI-CdB-3
-			dumpBoard.invoke(adam, new Object[] { board3 });
+			//Test 3 
+			dumpBoard.invoke(greg, new Object[] { board3 });
 			assertEquals(expectedOutput3, outContent.toString());
 			outContent.reset();
 		}
 		catch(Exception e){
-			fail("Something went wrong; I didn't bother to find out what.");
+			fail("ERROR");
 		}
 	}
 
