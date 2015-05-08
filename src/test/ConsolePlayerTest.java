@@ -33,27 +33,30 @@ public class ConsolePlayerTest {
 		plyO = new ConsolePlayer("@");
 		
 		// Nothing 7x6
-		ConsolePlayer[][] config1 = {{ null, null, null, null, null, null, null },
-									 { null, null, null, null, null, null, null },
-									 { null, null, null, null, null, null, null },
-									 { null, null, null, null, null, null, null },
-									 { null, null, null, null, null, null, null },
-									 { null, null, null, null, null, null, null }};
+		ConsolePlayer[][] config1 = {{ null, null, null, null, null, null },
+									 { null, null, null, null, null, null },
+									 { null, null, null, null, null, null },
+									 { null, null, null, null, null, null },
+									 { null, null, null, null, null, null },
+									 { null, null, null, null, null, null },
+									 { null, null, null, null, null, null }};
 									
 		//condition 2
-		ConsolePlayer[][] config2  ={{ null, null, null, null, null, null, null },
-				 					 { null, null, null, null, null, null, null },
-				 					 { null, null, null, null, null, null, null },
-				 					 { null, plyO, null, null, null, null, null },
-				 					 { null, plyX, null, null, null, plyO, null },
-				 					 { plyO, plyX, null, null, null, plyX, null }};
+		ConsolePlayer[][] config2  ={{ null, null, null, null, null, null },
+									 { null, null, null, null, null, null },
+				 					 { null, null, null, null, null, null },
+				 					 { null, null, null, null, null, null },
+				 					 { null, plyO, null, null, null, null },
+				 					 { null, plyX, null, null, null, plyO },
+				 					 { plyO, plyX, null, null, null, plyX }};
 		//condition 3
-		ConsolePlayer[][] config3 = {{ null, null, null, plyX, null, null, null },
-				 					 { null, null, null, plyO, null, null, null },
-				 					 { null, null, null, plyX, null, null, null },
-				 					 { null, null, null, plyO, null, null, null },
-				 					 { null, null, null, plyX, null, null, null },
-				 					 { null, null, null, plyO, null, null, null }};
+		ConsolePlayer[][] config3 = {{ null, null, null, plyX, null, null },
+									 { null, null, null, null, null, null },
+				 					 { null, null, null, plyO, null, null },
+				 					 { null, null, null, plyX, null, null },
+				 					 { null, null, null, plyO, null, null },
+				 					 { null, null, null, plyX, null, null },
+				 					 { null, null, null, plyO, null, null }};
 		
 		//----------Temp Tests, Created by Carlos-------//
 		//testboard1 = new Board(config1);
