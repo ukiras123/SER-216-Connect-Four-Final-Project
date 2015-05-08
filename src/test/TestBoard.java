@@ -43,9 +43,9 @@ public class TestBoard {
 		
 		//Check to make sure the copy of board1 has the same dimensions:
 		if(board1.getWidth() != board1copy.getWidth())
-			fail("The board copied isn't the same width!");
+			fail("The copied baord is a different width!");
 		if(board1.getHeight() != board1copy.getHeight())
-			fail("The board copied isn't the same height!");
+			fail("The copied board is a different height!");
 		//If it does, then check to make sure it has the same contents:
 		for(int i = 0; i < board1.getWidth(); i++)
 			for(int j = 0; j < board1.getHeight(); j++)
