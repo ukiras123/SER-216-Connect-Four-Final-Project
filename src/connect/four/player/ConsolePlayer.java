@@ -85,8 +85,8 @@ public class ConsolePlayer implements Player, ScoreChart.Listener {
             for (int j = 0; j != width; ++j) {
                 Player played = board.whoPlayed(j, i);
                 System.out.print(
-                    played == this ? "@" :
-                    played == null ? "-" : "X"
+                    played == this ? "@ " :
+                    played == null ? "- " : "X "
                 );
             }
             System.out.println();
