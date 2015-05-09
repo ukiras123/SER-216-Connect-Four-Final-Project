@@ -31,7 +31,7 @@ public class ConsolePlayerTest {
 	public void setUp() throws Exception {
 		
 		plyX = new ConsolePlayer("X");						
-		ply@ = new ConsolePlayer("@");
+		plyO = new ConsolePlayer("@");
 		
 		/**
         	* Case 1, 7x6 Null board.
