@@ -16,7 +16,7 @@ public class BoardTest {
     private static ComputerPlayer computer;
 
     @Before
-    public void initialiseTest() {
+    public void initializeTest() {
         //Create a new Board
         board = new Board(new ReadableBoard() {
             @Override
@@ -45,7 +45,9 @@ public class BoardTest {
             }
         });
 
-        //Create two new Players to populate the board
+        /**
+        *Creates two players to fill the board
+        */
         console = createConsolePlayer();
         computer = createComputerPlayer();
     }
@@ -54,10 +56,12 @@ public class BoardTest {
     public void testPlay() {
         //First case x=0
         board.play(0, console);
-        Assert.assertEquals("First slot in first column must be filled", console, board.whoPlayed(0, 0));
-        Assert.assertEquals("Only one move should be registered to the board", 1, board.getMoveCount());
+        Assert.assertEquals("The first slot in column 1 must be filled.", console, board.whoPlayed(0, 0));
+        Assert.assertEquals("The board should only register 1 move.", 1, board.getMoveCount());
 
-        //second case x=1
+        /**
+        *Case 2, x=1
+        */
         board.clear();
         board.play(0, console);
         board.play(1, computer);
@@ -65,31 +69,36 @@ public class BoardTest {
         board.play(2, console);
         board.play(5, computer);
         board.play(5, console);
-
-        board.play(1, console); //The changing play
+        board.play(1, console); 
         Assert.assertEquals("Changing play must be filled", console, board.whoPlayed(1, 2));
         Assert.assertEquals("Only 7 moves should be registered to the board", 7, board.getMoveCount());
 
         
     }
-    //Third case in testFailedPlay()
+    /**
+    *Case 3, testFailedPlay
+    */
     @Test(expected = ColumnFullException.class)
     public void testFailedPlay() {
-        //Third case x=3
+        /**
+        *Case 3, x=3
+        */
         board.play(3, console);
         board.play(3, computer);
         board.play(3, console);
         board.play(3, computer);
         board.play(3, console);
         board.play(3, computer);
-
-        board.play(3, console); //The column should be full right here
+        //Column should be full here
+        board.play(3, console); 
     }
 
     @Test
     public void testGetColumnHeight() {
         
-        //Zero case x=0
+        /**
+        *Case 0, x=0
+        */
         board.play(0, computer);
         board.play(1, console);
         board.play(1, console);
@@ -98,7 +107,9 @@ public class BoardTest {
         board.play(2, console);
         Assert.assertEquals("Height of column 0 should be 1", 1, board.getColumnHeight(0));
         
-        //First case x=1
+        /**
+        *Case 1, x=1
+        */
         board.play(0, computer);
         board.play(1, console);
         board.play(1, console);
@@ -107,7 +118,9 @@ public class BoardTest {
         board.play(2, console);
         Assert.assertEquals("Height of column 1 should be 3", 3, board.getColumnHeight(1));
 
-        //Second case x=2
+        /**
+        *Case 2, x=2
+        */
         board.clear();
         board.play(0, computer);
         board.play(1, console);
@@ -117,7 +130,9 @@ public class BoardTest {
         board.play(2, console);
         Assert.assertEquals("Height of column 2 should be 2", 2, board.getColumnHeight(2));
 
-        //Third case x=3
+        /**
+        *Case 3, x=3
+        */
         board.clear();
         board.play(0, computer);
         board.play(1, console);
@@ -127,7 +142,9 @@ public class BoardTest {
         board.play(2, console);
         Assert.assertEquals("Height of column 3 should be 0", 0, board.getColumnHeight(3));
 
-        //Fourth case x=4
+        /**
+        *Case 4, x=4
+        */
         board.clear();
         board.play(0, computer);
         board.play(1, console);
@@ -137,11 +154,15 @@ public class BoardTest {
         board.play(4, console);
         Assert.assertEquals("Height of column 4 should be 2", 2, board.getColumnHeight(4));
 
-        //Fifth case x=5
+        /**
+        *Case 5, x=5
+        */
         board.clear();
         Assert.assertEquals("Height of column 5 should be 0", 0, board.getColumnHeight(5));
 
-        //Sixth case x=6
+        /**
+        *Case 6, x=6
+        */
         board.clear();
         board.play(0, computer);
         board.play(1, console);
@@ -160,12 +181,16 @@ public class BoardTest {
 
     @Test
     public void testClear() {
-        //First case
+        /**
+        *Case 1
+        */
         board.play(0, console);
         board.clear();
-        Assert.assertEquals("Board must be empty", 0, board.getMoveCount());
+        Assert.assertEquals("Must be an empty board.", 0, board.getMoveCount());
 
-        //second case
+        /**
+        *Case 2
+        */
         console = createConsolePlayer();
         board.play(0, computer);
         board.play(1, console);
@@ -179,13 +204,15 @@ public class BoardTest {
         board.play(2, computer);
         board.play(1, console);
         board.clear();
-        Assert.assertEquals("Board must be empty", 0, board.getMoveCount());
+        Assert.assertEquals("Must be an empty board.", 0, board.getMoveCount());
 
-        //Third case
+        /**
+        *Case 3
+        */
         console = createConsolePlayer();
         computer = createComputerPlayer();
         board.clear();
-        Assert.assertEquals("Board must be empty", 0, board.getMoveCount());
+        Assert.assertEquals("Must be an empty board.", 0, board.getMoveCount());
     }
 
     private ConsolePlayer createConsolePlayer() {
