@@ -24,27 +24,27 @@ public class BoardTest {
             @Override
             public Player whoPlayed(int x, int y) {
                 return null;
-            }
+            }//end whoPlayed
 
             @Override
             public int getWidth() {
                 return 7;
-            }
+            }//end getWidth
 
             @Override
             public int getHeight() {
                 return 6;
-            }
+            }//end getHeight
 
             @Override
             public int getColumnHeight(int x) {
                 return 0;
-            }
+            }//end getColumnHeight
 
             @Override
             public int getMoveCount() {
                 return 0;
-            }
+            }//end getMoveCount
         });
 
         /**
@@ -52,7 +52,7 @@ public class BoardTest {
         */
         console = createConsolePlayer();
         computer = createComputerPlayer();
-    }
+    }//end initializeTest
 
     @Test
     public void testPlay() {
@@ -76,9 +76,9 @@ public class BoardTest {
         board.play(1, console); 
         Assert.assertEquals("Changing play must be filled", console, board.whoPlayed(1, 2));
         Assert.assertEquals("Only 7 moves should be registered to the board", 7, board.getMoveCount());
-
-        
-    }
+    }//end testPlay
+    
+    
     /**
     *Case 3, testFailedPlay
     */
@@ -95,11 +95,10 @@ public class BoardTest {
         board.play(3, computer);
         //Column should be full here
         board.play(3, console); 
-    }
+    }//end testFailedPlay
 
     @Test
     public void testGetColumnHeight() {
-        
         /**
         *Case 0, x=0
         */
@@ -181,7 +180,7 @@ public class BoardTest {
         board.play(6, console);
         board.play(6, computer);
         Assert.assertEquals("Height of column 6 should be 2", 2, board.getColumnHeight(6));
-    }
+    }//end testGetColumnHeight
 
     @Test
     public void testClear() {
@@ -217,13 +216,14 @@ public class BoardTest {
         computer = createComputerPlayer();
         board.clear();
         Assert.assertEquals("Must be an empty board.", 0, board.getMoveCount());
-    }
+    }//end testClear
 
     private ConsolePlayer createConsolePlayer() {
         return new ConsolePlayer("HumanPlayer");
-    }
+    }//end createConsolePlayer
 
     private ComputerPlayer createComputerPlayer() {
         return new ComputerPlayer();
-    }
-}
+    }//end createComputerPlayer
+    
+}//end BoardTest
