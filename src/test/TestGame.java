@@ -48,7 +48,7 @@ public class TestGame {
 		*Setup board layout 3.
 		* Diagonal Wins plyO
 		*/
-		ConsolePlayer[][] board3Config = {{ plyX, plyX, plyX, plyO, null, null }, 
+		ConsolePlayer[][] board3Layout = {{ plyX, plyX, plyX, plyO, null, null }, 
 						  { plyX, plyX, plyO, null, null, null }, 
 						  { plyX, plyO, plyO, null, null, null }, 
 						  { plyO, plyX, plyO, plyO, null, null }, 
