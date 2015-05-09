@@ -78,14 +78,4 @@ public class ConsolePlayerTest {
 	public void tearDown() throws Exception {
 	}//end tearDown
 
-	@Test
-	public void testConsolePlayer() {
-	}//end testConsolePlayer
-	
-	/**
-	*  ConsolePlayer function that runs private dumpBoard(ReadableBoard Board)
-	*/
-	@Test
-	public void testPerformPlay() {
-	}//end testPreformplay
 }//end ConsolePlayerTest
