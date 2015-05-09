@@ -112,6 +112,7 @@ public class BoardTest {
         /**
         *Case 1, x=1
         */
+        board.clear();
         board.play(0, computer);
         board.play(1, console);
         board.play(1, console);
