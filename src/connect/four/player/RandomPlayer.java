@@ -26,3 +26,4 @@ public class RandomPlayer implements Player {
 	board.play(x, this);
     }
 }
+
