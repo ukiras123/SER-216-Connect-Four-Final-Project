@@ -15,9 +15,11 @@ public class BoardTest {
     private static ConsolePlayer console;
     private static ComputerPlayer computer;
 
+    /**
+    *Creates a new board
+    */
     @Before
     public void initializeTest() {
-        //Create a new Board
         board = new Board(new ReadableBoard() {
             @Override
             public Player whoPlayed(int x, int y) {
@@ -54,7 +56,9 @@ public class BoardTest {
 
     @Test
     public void testPlay() {
-        //First case x=0
+        /**
+        *Case 1, x=0
+        */
         board.play(0, console);
         Assert.assertEquals("The first slot in column 1 must be filled.", console, board.whoPlayed(0, 0));
         Assert.assertEquals("The board should only register 1 move.", 1, board.getMoveCount());
