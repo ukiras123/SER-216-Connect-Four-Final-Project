@@ -1,13 +1,10 @@
 package test;
-
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 import connect.four.Game;
 import connect.four.board.Board;
 import connect.four.player.ConsolePlayer;
@@ -20,7 +17,6 @@ public class ConsolePlayerTest {
 	Board testboard3;
 	ConsolePlayer plyX;
 	ConsolePlayer plyO;
-	
 	Game game;
 	
 	@BeforeClass
@@ -71,13 +67,10 @@ public class ConsolePlayerTest {
 		
 		testboard1 = new Board(layout1);
 		game = new Game(new Player[] {plyX, plyO}, testboard1, 4);
-		
 		testboard2 = new Board(layout2);
 		game = new Game(new Player[] {plyX, plyO}, testboard2, 4);
-
 		testboard3 = new Board(layout3);
 		game = new Game(new Player[] {plyX, plyO}, testboard3, 4);
-
 		game.start();		
 	}//end setUp
 
