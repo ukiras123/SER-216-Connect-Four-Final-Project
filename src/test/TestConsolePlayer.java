@@ -41,38 +41,38 @@ public class TestConsolePlayer {
 		*String representation 1 of expected output
 		*/
 		String expectedOutput1 = "@ is you, X is the other player, and - is empty." + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
 					 "=============" + System.lineSeparator() +
-					 "1 2 3 4 5 6 7" + System.lineSeparator();
+					 "1 2 3 4 5 6 7 " + System.lineSeparator();
 		/**
 		*String representation 2 of expected output
 		*/
 		String expectedOutput2 = "@ is you, X is the other player, and - is empty." + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- - - - - - -" + System.lineSeparator() +
-					 "- @ - - - - -" + System.lineSeparator() +
-					 "- X - - - @ -" + System.lineSeparator() +
-					 "@ X @ - - X -" + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- - - - - - - " + System.lineSeparator() +
+					 "- @ - - - - - " + System.lineSeparator() +
+					 "- X - - - @ - " + System.lineSeparator() +
+					 "@ X @ - - X - " + System.lineSeparator() +
 					 "=============" + System.lineSeparator() +
-					 "1 2 3 4 5 6 7" + System.lineSeparator();
+					 "1 2 3 4 5 6 7 " + System.lineSeparator();
 		/**
 		*String representation 3 of expected output
 		*/
 		String expectedOutput3 = "@ is you, X is the other player, and - is empty." + System.lineSeparator() +
-					 "- - - X - - -" + System.lineSeparator() +
-					 "- - - @ - - -" + System.lineSeparator() +
-					 "- - - X - - -" + System.lineSeparator() +
-					 "- - - @ - - -" + System.lineSeparator() +
-					 "- - - X - - -" + System.lineSeparator() +
-					 "- - - @ - - -" + System.lineSeparator() +
+					 "- - - X - - - " + System.lineSeparator() +
+					 "- - - @ - - - " + System.lineSeparator() +
+					 "- - - X - - - " + System.lineSeparator() +
+					 "- - - @ - - - " + System.lineSeparator() +
+					 "- - - X - - - " + System.lineSeparator() +
+					 "- - - @ - - - " + System.lineSeparator() +
 					 "=============" + System.lineSeparator() +
-					 "1 2 3 4 5 6 7" + System.lineSeparator();
+					 "1 2 3 4 5 6 7 " + System.lineSeparator();
 		/**
 		*Setup board layout 1
 		*/
@@ -132,7 +132,7 @@ public class TestConsolePlayer {
 		dumpBoard.setAccessible(true);
 		
 		/**
-		*Preform the tests.
+		*Perform the tests.
 		*/
 		try{
 			//Test 1 
