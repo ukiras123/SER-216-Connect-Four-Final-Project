@@ -653,6 +653,16 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 					gui.addGameOver();
 					justWon = true;
 		}
+		else
+		{
+			gui.setScore1(gui.getScore1()+0);
+			gui.setScore2(gui.getScore2()+0);
+			gui.setWinner("its a tie!");
+			board.clear();
+			initNewGame();
+			gui.addGameOver();
+		}
+
 	}
 	
 	
