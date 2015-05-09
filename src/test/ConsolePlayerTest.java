@@ -14,7 +14,10 @@ import connect.four.player.ConsolePlayer;
 import connect.four.player.Player;
 
 public class ConsolePlayerTest {
-	Board testboard1, testboard2, testboard3;
+	
+	Board testboard1;
+	Board testboard2;
+	Board testboard3;
 	ConsolePlayer plyX;
 	ConsolePlayer plyO;
 	
@@ -22,11 +25,11 @@ public class ConsolePlayerTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-	}
+	}//end setUpAfterClass
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-	}
+	}//end tearDownAfterClass
 
 	@Before
 	public void setUp() throws Exception {
@@ -34,31 +37,37 @@ public class ConsolePlayerTest {
 		plyX = new ConsolePlayer("X");						
 		ply@ = new ConsolePlayer("@");
 		
-		// Nothing 7x6
+		/**
+        	* Case 1, 7x6 Null board.
+        	*/
 		ConsolePlayer[][] layout1 = {{ null, null, null, null, null, null },
-									 { null, null, null, null, null, null },
-									 { null, null, null, null, null, null },
-									 { null, null, null, null, null, null },
-									 { null, null, null, null, null, null },
-									 { null, null, null, null, null, null },
-									 { null, null, null, null, null, null }};
+					     { null, null, null, null, null, null },
+					     { null, null, null, null, null, null },
+					     { null, null, null, null, null, null },
+					     { null, null, null, null, null, null },
+					     { null, null, null, null, null, null },
+					     { null, null, null, null, null, null }};
 									
-		//condition 2
+		/**
+        	* Case 2
+        	*/
 		ConsolePlayer[][] layout2  ={{ null, null, null, null, null, null },
-									 { null, null, null, null, null, null },
-				 					 { null, null, null, null, null, null },
-				 					 { null, null, null, null, null, null },
-				 					 { null, plyO, null, null, null, null },
-				 					 { null, plyX, null, null, null, plyO },
-				 					 { plyO, plyX, null, null, null, plyX }};
-		//condition 3
+					     { null, null, null, null, null, null },
+				 	     { null, null, null, null, null, null },
+	            			     { null, null, null, null, null, null },
+				 	     { null, plyO, null, null, null, null },
+				 	     { null, plyX, null, null, null, plyO },
+				 	     { plyO, plyX, null, null, null, plyX }};
+		/**
+        	* Case 3
+        	*/
 		ConsolePlayer[][] layout3 = {{ null, null, null, plyX, null, null },
-									 { null, null, null, null, null, null },
-				 					 { null, null, null, plyO, null, null },
-				 					 { null, null, null, plyX, null, null },
-				 					 { null, null, null, plyO, null, null },
-				 					 { null, null, null, plyX, null, null },
-				 					 { null, null, null, plyO, null, null }};
+					     { null, null, null, null, null, null },
+				 	     { null, null, null, plyO, null, null },
+				 	     { null, null, null, plyX, null, null },
+				 	     { null, null, null, plyO, null, null },
+				 	     { null, null, null, plyX, null, null },
+				 	     { null, null, null, plyO, null, null }};
 		
 		testboard1 = new Board(layout1);
 		game = new Game(new Player[] {plyX, plyO}, testboard1, 4);
@@ -66,28 +75,24 @@ public class ConsolePlayerTest {
 		testboard2 = new Board(layout2);
 		game = new Game(new Player[] {plyX, plyO}, testboard2, 4);
 
-		
 		testboard3 = new Board(layout3);
 		game = new Game(new Player[] {plyX, plyO}, testboard3, 4);
 
 		game.start();		
-
-	}
+	}//end setUp
 
 	@After
 	public void tearDown() throws Exception {
-	}
+	}//end tearDown
 
 	@Test
 	public void testConsolePlayer() {
-		
-	}
+	}//end testConsolePlayer
 	
-	//-----------------ConsolePlayer Method that runs private dumpBoard(ReadableBoard Board) --------------------------//
+	/**
+	*  ConsolePlayer function that runs private dumpBoard(ReadableBoard Board)
+	*/
 	@Test
 	public void testPerformPlay() {
-		
-
-	}
-
-}
+	}//end testPreformplay
+}//end ConsolePlayerTest
