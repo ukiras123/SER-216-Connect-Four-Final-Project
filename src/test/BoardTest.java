@@ -1,5 +1,4 @@
 package test;
-
 import connect.four.board.Board;
 import connect.four.board.ColumnFullException;
 import connect.four.board.ReadableBoard;
