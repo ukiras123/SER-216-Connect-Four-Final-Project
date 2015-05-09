@@ -12,55 +12,71 @@ public class TestBoard {
 	@Test
 	public void testBoardCopyConstructor() {
 		
-		//Instantiate the console players:
+		/**
+		*Initialize console players and determine @ or X coins.
+		*/
 		ConsolePlayer aT = new ConsolePlayer("@");
 		ConsolePlayer X = new ConsolePlayer("X");
 		
-		//Setup the two board configurations:
-		ConsolePlayer[][] board1Config = {{ null, null, null, null, null, null, null  },
-										  { null, null, null, null, null, null, null  },
-										  { null, null, null, null, null, null, null  }, 
-								   		  { X, null, null, null, null, null, null  },
-										  { aT, X, null, null, null, null, null  },
-										  { aT, X, null, null, null, null, null  },
-										  { aT, X, aT, aT, X, aT, null }};
+		/**
+		*Set up the two board layouts
+		*/
+		ConsolePlayer[][] board1Layout = {{ null, null, null, null, null, null, null  },
+						  { null, null, null, null, null, null, null  },
+						  { null, null, null, null, null, null, null  }, 
+						  { X, null, null, null, null, null, null  },
+						  { aT, X, null, null, null, null, null  },
+						  { aT, X, null, null, null, null, null  },
+						  { aT, X, aT, aT, X, aT, null }};
 				
-		ConsolePlayer[][] board2Config = {{ null, null, null, null, null, null, null  }, 
-										  { null, null, null, null, null, null, null  }, 
-										  { null, null, null, null, null, null, null  }, 
-								  		  { null, null, null, null, null, null, null  }, 
-										  { null, null, null, null, null, null, null  }, 
-										  { null, null, null, null, null, null, null  }, 
-										  { null, null, null, null, null, null, null  }};
+		ConsolePlayer[][] board2Layout = {{ null, null, null, null, null, null, null  }, 
+						  { null, null, null, null, null, null, null  }, 
+						  { null, null, null, null, null, null, null  }, 
+						  { null, null, null, null, null, null, null  }, 
+						  { null, null, null, null, null, null, null  }, 
+						  { null, null, null, null, null, null, null  }, 
+						  { null, null, null, null, null, null, null  }};
 		
-		//Create the two boards to be copied with the two board configurations:
-		Board board1 = new Board(board1Config);
-		Board board2 = new Board(board2Config);
+		/**
+		 * Create two boards to be copied with two board layouts:
+		 */
+		Board board1 = new Board(board1Layout);
+		Board board2 = new Board(board2Layout);
 		
-		//Attempt to create copies of the two boards:
-		Board board1copy = new Board(board1);//Test ID# UI-BB-1
-		Board board2copy = new Board(board2);//Test ID# UI-BB-2
+		/**
+		* try to create two copies of the boards
+		*/
+		Board board1copy = new Board(board1);
+		Board board2copy = new Board(board2);
 		
-		//Check to make sure the copy of board1 has the same dimensions:
+		/**
+		 * See if board 1 copy has the same dimensions
+		 */ 
 		if(board1.getWidth() != board1copy.getWidth())
 			fail("The copied baord is a different width!");
 		if(board1.getHeight() != board1copy.getHeight())
 			fail("The copied board is a different height!");
-		//If it does, then check to make sure it has the same contents:
-		for(int i = 0; i < board1.getWidth(); i++)
-			for(int j = 0; j < board1.getHeight(); j++)
+		//If copy of board 1 has the same dimensions, see if it has the same contents.
+		for(int i = 0; i < board1.getWidth(); i++) {
+			for(int j = 0; j < board1.getHeight(); j++) {
 				assertEquals(board1.whoPlayed(i, j), board1copy.whoPlayed(i, j));
+			}//end inner for loop	
+		}//end outer for loop
 		
-		//Check to make sure the copy of board2 has the same dimensions:
+		/**
+		 * See if board 2 copy has the same dimensions
+		 */ 
 		if(board2.getWidth() != board2copy.getWidth())
-			fail("The board copied isn't the same width!");
+			fail("The copied board has a differnt width.");
 		if(board2.getHeight() != board2copy.getHeight())
-			fail("The board copied isn't the same height!");
-		//If it does, then check to make sure it has the same contents:
-		for(int i = 0; i < board2.getWidth(); i++)
-			for(int j = 0; j < board2.getHeight(); j++)
+			fail("The copied board has a differnt height.");
+		//If copy of board 2 has the same dimensions, see if it has the same contents.
+		for(int i = 0; i < board2.getWidth(); i++) {
+			for(int j = 0; j < board2.getHeight(); j++) {
 				assertEquals(board2.whoPlayed(i, j), board2copy.whoPlayed(i, j));
+			}//end inner for loop	
+		}//end outer for loop		
 		
-	}
+	}// end testBoardCopyConstructor
 
-}
+}//end testBoard
