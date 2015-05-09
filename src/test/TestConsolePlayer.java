@@ -1,18 +1,13 @@
 package test;
-
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import connect.four.player.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.Class;
 import java.lang.reflect.Method;
-
 import connect.four.board.*;
 
 /**
